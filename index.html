@@ -12,196 +12,508 @@
     <meta name="twitter:card" content="summary" />
     <link rel="canonical" href="https://example.com/" />
     <style>
-        :root{--accent:hsl(29, 63%, 46%);--muted:#666;--bg:#fff}
-        *{box-sizing:border-box}
-        body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.5;color:#222;margin:0;background:var(--bg)}
-        header{background:#faf5f5;border-bottom:1px solid #eee;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-        .brand{font-weight:700;color:var(--accent);font-size:3.10rem}
-        nav a{margin-left:12px;color:#333;text-decoration:none;font-size:0.95rem}
-        .container{max-width:980px;margin:28px auto;padding:0 18px}
-        .hero{display:flex;flex-direction:column;gap:18px;padding:28px;border-radius:8px;background:linear-gradient(180deg,#fff,#fff);box-shadow:0 2px 8px rgba(0,0,0,.04)}
-        .cta{background:var(--accent);color:white;padding:10px 14px;border-radius:6px;text-decoration:none;font-weight:600}
-        .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-        .card{padding:16px;border-radius:8px;border:1px solid #f0f0f0;background:#fff}
-        h1,h2{margin:0 0 10px 0}
-        p{margin:0 0 12px 0;color:var(--muted)}
-        ul{margin:8px 0 0 18px}
-        .services-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-        .service-item{padding:10px;border-radius:6px;background:#fff;border:1px dashed #f2f2f2}
-        footer{padding:18px;text-align:center;color:#777;font-size:0.95rem;border-top:1px solid #f0f0f0;margin-top:28px}
-        form input,form textarea{width:100%;padding:10px;margin-top:6px;border:1px solid #e6e6e6;border-radius:6px}
-        form button{margin-top:8px;padding:10px 14px;border-radius:6px;border:0;background:var(--accent);color:#fff}
-        @media (max-width:800px){.grid,.services-list{grid-template-columns:1fr}}
-        /* WhatsApp button styles */
-        .whatsapp-btn{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.12);text-decoration:none;z-index:1000;touch-action:manipulation}
-        .whatsapp-btn svg{width:24px;height:24px;display:block}
-        .whatsapp-inline{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;font-weight:600}
-        /* Mobile adjustments */
-        @media (max-width:600px){
-            .container{padding-bottom:calc(92px + env(safe-area-inset-bottom));}
-            .whatsapp-btn{right:14px;bottom:calc(14px + env(safe-area-inset-bottom));width:62px;height:62px}
-            .whatsapp-btn svg{width:28px;height:28px}
-            .whatsapp-inline{padding:10px 14px;font-size:1rem}
-            header{padding:14px 16px}
-            .brand{font-size:2.10rem}
-            nav a{margin-left:8px;font-size:0.92rem}
-        }
-        /* Promotions banner */
-        .promo-banner{margin-top:20px;border-radius:8px;overflow:hidden;border:1px solid #f3f3f3;background:#fff}
-        .promo-banner a{display:block}
-        .promo-img{width:100%;height:320px;object-fit:cover;display:block}
-        .promo-caption{padding:12px 16px;background:linear-gradient(180deg,rgba(0,0,0,0.03),transparent);color:var(--muted);font-size:0.95rem}
-        @media (max-width:600px){
-            .promo-img{height:180px}
-            .promo-caption{font-size:0.95rem;padding:10px}
-        }
+       :root{
+  --pink:#e91e63;     /* pinkish accent */
+  --white:#ffffff;   /* white */
+  --muted:#666;
+  --bg:#fff;
+}
+
+*{box-sizing:border-box}
+
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  line-height:1.5;
+  color:#222;
+  margin:0;
+  background:var(--bg);
+}
+
+/* HEADER (two colors only: white + pink) */
+header{
+  background:var(--white);
+  border-bottom:2px solid var(--pink);
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+
+.brand{
+  font-weight:900;
+  color:var(--pink);
+  font-size:1.35rem;
+  letter-spacing:0.10em;
+  text-transform:uppercase;
+  line-height:1;
+}
+
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+nav a{
+  margin-left:0;
+  color:var(--pink);
+  text-decoration:none;
+  font-size:1rem;
+  font-weight:700;
+  padding:8px 10px;
+  border-radius:10px;
+  letter-spacing:0.02em;
+}
+
+nav a:hover,
+nav a:focus-visible{
+  background:var(--pink);
+  color:var(--white);
+  outline:none;
+}
+
+/* PAGE LAYOUT */
+.container{max-width:980px;margin:28px auto;padding:0 18px}
+
+.hero{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  padding:28px;
+  border-radius:8px;
+  background:linear-gradient(180deg,#fff,#fff);
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+
+.cta{
+  background:var(--pink);
+  color:var(--white);
+  padding:10px 14px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:700;
+  display:inline-block;
+}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+
+.card{
+  padding:16px;
+  border-radius:8px;
+  border:1px solid #f0f0f0;
+  background:#fff;
+}
+
+h1,h2{margin:0 0 10px 0}
+
+p{margin:0 0 12px 0;color:var(--muted)}
+
+ul{margin:8px 0 0 18px}
+
+.services-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+
+.service-item{
+  padding:10px;
+  border-radius:6px;
+  background:#fff;
+  border:1px dashed #f2f2f2;
+}
+
+footer{
+  padding:18px;
+  text-align:center;
+  color:#777;
+  font-size:0.95rem;
+  border-top:1px solid #f0f0f0;
+  margin-top:28px;
+}
+
+form input,form textarea{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  border:1px solid #e6e6e6;
+  border-radius:6px;
+}
+
+form button{
+  margin-top:8px;
+  padding:10px 14px;
+  border-radius:6px;
+  border:0;
+  background:var(--pink);
+  color:var(--white);
+  font-weight:700;
+  cursor:pointer;
+}
+
+@media (max-width:800px){
+  .grid,.services-list{grid-template-columns:1fr}
+}
+
+/* Floating WhatsApp button (base styles) */
+.whatsapp-btn{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  background:#25D366;
+  color:#fff;
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+  text-decoration:none;
+  z-index:1000;
+  touch-action:manipulation;
+
+  /* pop animation support */
+  transform:translateZ(0);
+  transition:transform .18s ease, box-shadow .18s ease;
+  will-change:transform;
+}
+
+.whatsapp-btn svg{width:24px;height:24px;display:block}
+
+/* Mobile sizing */
+@media (max-width:600px){
+  .whatsapp-btn{
+    right:14px;
+    bottom:calc(14px + env(safe-area-inset-bottom));
+    width:62px;
+    height:62px;
+  }
+  .whatsapp-btn svg{width:28px;height:28px}
+}
+
+/* Pop effect class */
+.whatsapp-btn.is-pop{
+  transform:scale(1.08);
+  box-shadow:0 10px 26px rgba(0,0,0,.18);
+}
+
+
+/* Mobile adjustments */
+@media (max-width:600px){
+  .container{padding-bottom:calc(92px + env(safe-area-inset-bottom));}
+
+  .whatsapp-btn{
+    right:14px;
+    bottom:calc(14px + env(safe-area-inset-bottom));
+    width:62px;
+    height:62px;
+  }
+  .whatsapp-btn svg{width:28px;height:28px}
+  .whatsapp-inline{padding:10px 14px;font-size:1rem}
+
+  header{padding:12px 14px}
+  .brand{font-size:1.2rem}
+  nav a{font-size:0.95rem;padding:8px 10px}
+}
+
+/* Promotions banner */
+.promo-banner{
+  margin-top:40px;
+  border-radius:15px;
+  overflow:hidden;
+  border:1px solid #f3f3f3;
+  background:#fff;
+}
+
+.promo-banner a{display:block}
+
+/* Responsive height (desktop->mobile) */
+.promo-img{
+  width:100%;
+  height:clamp(220px, 35vw, 520px);
+  object-fit:cover;
+  display:block;
+}
+
+.promo-caption{
+  padding:12px 16px;
+  background:linear-gradient(180deg,rgba(0,0,0,0.03),transparent);
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+.brand{display:flex;align-items:center;gap:10px}
+
+.brand-avatar{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  overflow:hidden;
+  border:2px solid var(--pink);
+  flex:0 0 auto;
+}
+
+.brand-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+
+  /* small deterrents */
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-user-drag:none;
+  pointer-events:auto; /* stops right-click save on the image itself */
+}
+
+
+@media (max-width:600px){
+  .promo-img{height:220px;}      /* FIX: was 10px */
+  .promo-caption{font-size:0.95rem;padding:10px}
+  .brand-avatar{width:34px;height:34px}
+}
+
     </style>
 </head>
 <body>
-    <header>
-        <div class="brand">Sri Varsha Beauty</div>
-        <nav>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
 
-    <main class="container">
-        <section class="hero" aria-labelledby="home-title">
-            <h1 id="home-title">Beauty & Saree Rolling Services — Professional, Trusted, On-site</h1>
-            <p>Specializing in bridal makeup, event hair styling, facials, and expert saree rolling & draping for ceremonies and photoshoots. Available for home visits and on-location at venues.</p>
-            <div style="display:flex;gap:10px;flex-wrap:wrap">
-                <a class="cta" href="#contact">Book an Appointment</a>
-                <a href="#services" style="padding:10px 14px;border-radius:6px;border:1px solid #ddd;text-decoration:none;color:#333">View Services</a>
-            </div>
-        </section>
+<header class="site-header">
+  <div class="brand">
+    <span class="brand-avatar" aria-hidden="true">
+      <img src="./assets/avatar.jpg" alt="Vookanti Anusha" draggable="false" />
+    </span>
 
-        <!-- Promotions / Offers banner: replace the image src with your poster file -->
-        <section id="promotions" class="promo-banner" aria-label="Current promotions">
-            <a href="#contact" target="_blank" rel="noopener">
-                <picture>
-                    <source srcset="/assets/promo-poster.webp" type="image/webp">
-                    <source srcset="/assets/promo-poster.jpeg" type="image/jpeg">
-                    <img class="promo-img" src="/download.jpeg" alt="Current offer - click to book"/>
-                </picture>
-            </a>
-            <div class="promo-caption">Limited time offer: Book bridal services and get an introductory discount. Replace this text with your offer details.</div>
-        </section>
+    <span class="brand-main">SRI VARSHA</span>
+    <span class="brand-badge">BEAUTY</span>
+  </div>
 
-        <section id="services" style="margin-top:22px">
-            <h2>Our Services</h2>
-            <div class="grid" role="list">
-                <div class="card" role="listitem">
-                    <h3>Beauty Services</h3>
-                    <p>Complete salon-grade beauty treatments for daily looks, events and bridal needs.</p>
-                    <ul>
-                        <li>Bridal & occasion makeup</li>
-                        <li>Hair styling & updos</li>
-                        <li>Facials, threading & waxing</li>
-                        <li>Manicure & pedicure</li>
-                    </ul>
-                </div>
-                <div class="card" role="listitem">
-                    <h3>Saree Rolling & Draping</h3>
-                    <p>Experienced saree draping and rolling for comfort, photography and travel-ready packing.</p>
-                    <ul>
-                        <li>Traditional drapes (Nivi, Bengali, Maharashtrian, etc.)</li>
-                        <li>Saree rolling for travel & storage</li>
-                        <li>On-site event draping for brides & guests</li>
-                        <li>Quick changes & blouse adjustments</li>
-                    </ul>
-                </div>
-            </div>
+  <nav class="site-nav">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-            <h3 style="margin-top:16px">Popular Packages</h3>
-            <div class="services-list" aria-hidden="false">
-                <div class="service-item"><strong>Bridal Complete</strong><br/>Makeup, hair, trial & on-day touchups</div>
-                <div class="service-item"><strong>Saree & Style</strong><br/>Draping, pleating and secure pinning for photos/events</div>
-                <div class="service-item"><strong>Event Glam</strong><br/>Makeup + hair styling for family & guests</div>
-                <div class="service-item"><strong>Travel Roll</strong><br/>Professional saree rolling and packing</div>
-            </div>
-        </section>
+<!-- Promotions / Offers -->
+<section id="promotions" class="promo-banner" aria-label="Current promotions">
+  <a href="#contact" class="promo-link">
+    <img
+      class="promo-img"
+      src="assets/PHOTO-2026-02-06-08-25-28.jpg"
+      alt="Special offer - Tap to book an appointment at Sri Varsha Beauty"
+      loading="lazy"
+      decoding="async"
+    />
+  </a>
 
-        <section id="about" style="margin-top:22px">
-            <h2>About Sri Varsha Beauty</h2>
-            <p>Sri Varsha Beauty has years of experience in traditional saree draping and modern beauty services. The team focuses on hygiene, punctuality and personalized looks that suit skin tone, outfit and occasion.</p>
-        </section>
+  <div class="promo-caption">
+    🎉 <strong>Limited Offer:</strong> Bridal Makeup + Saree Draping — special discount this month.
+    <a class="promo-cta" href="#contact">Book Now</a>
+  </div>
+</section>
 
-        <section id="contact" style="margin-top:22px">
-            <h2>Contact & Booking</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Get in touch</h3>
-                    <p><strong>Phone:</strong> <a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a><br/>
-                         <strong>Email:</strong> <a href="mailto:info@example.com">info@example.com</a><br/>
-                         <strong>Address:</strong> 123 Your Street, Your City, State (Replace with actual address)</p>
-                        <p>
-                            <!-- Replace the phone number in the href with your full international number (no + or dashes). -->
-                            <a class="whatsapp-inline" href="https://wa.me/919999999999?text=Hello%20Sri%20Varsha%20Beauty%20I%20want%20to%20book%20a%20service" target="_blank" rel="noopener">WhatsApp us</a>
-                        </p>
-                    <p><strong>Hours:</strong> Mon–Sat 09:00–19:00</p>
-                    <p><a href="https://maps.google.com" target="_blank" rel="noopener">Open in Google Maps</a></p>
-                </div>
+<main class="container">
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="home-title">
+    <h1 id="home-title">Makeup, Hair & Saree Draping in Karimnagar</h1>
+    <p>
+      We help you look your best for weddings, functions, and special days.
+      Simple booking. Clean work. On-time service.
+    </p>
 
-                <div class="card">
-                    <h3>Quick Booking</h3>
-                    <form action="mailto:info@example.com" method="post" enctype="text/plain">
-                        <label for="name">Name</label>
-                        <input id="name" name="Name" type="text" required placeholder="Your name">
-                        <label for="phone">Phone</label>
-                        <input id="phone" name="Phone" type="tel" required placeholder="+91XXXXXXXXXX">
-                        <label for="service">Service</label>
-                        <input id="service" name="Service" type="text" placeholder="e.g., Bridal makeup, Saree rolling">
-                        <label for="message">Message / Date & Time</label>
-                        <textarea id="message" name="Message" rows="4" placeholder="Preferred date, time, location"></textarea>
-                        <button type="submit">Send Request</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+    <div class="hero-actions">
+      <a class="cta" href="#contact">Book Now</a>
+      <a class="cta-outline" href="#services">See Services</a>
+    </div>
 
-    <footer>
-        © <span id="year"></span> Postgradsagas LLP — All rights reserved.
-    </footer>
+    <div class="trust-line" aria-label="Service highlights">
+      ✅ Bridal | ✅ Party Makeup | ✅ Saree Rolling | ✅ Home / Venue Service
+    </div>
+  </section>
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Sri Varsha Beauty",
-        "description": "Beauty salon offering bridal makeup, hair styling, facials and saree rolling & draping services. Available for home visits and events.",
-        "telephone": "+91XXXXXXXXXX",
-        "email": "info@example.com",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "123 Your Street",
-            "addressLocality": "Your City",
-            "addressRegion": "Your State",
-            "postalCode": "000000",
-            "addressCountry": "IN"
-        },
-        "url": "https://example.com/",
-        "areaServed": "Your City",
-        "service": [
-            {"@type":"Service","name":"Bridal makeup & hair","description":"Full bridal makeup, trial and on-day support."},
-            {"@type":"Service","name":"Saree rolling & draping","description":"Professional saree rolling, pleating and event draping."},
-            {"@type":"Service","name":"Facials & skincare","description":"Salon facial treatments and skin prep for events."}
-        ]
-    }
-    </script>
+  <!-- SERVICES -->
+  <section id="services" class="section" aria-labelledby="services-title">
+    <h2 id="services-title">Services</h2>
+    <p class="section-subtext">
+      Choose what you need. If you’re not sure, just message us on WhatsApp—we will guide you.
+    </p>
 
-    <script>
-        // small helpers
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-    <!-- Floating WhatsApp button: replace the phone number with your international number (no + or dashes) -->
-    <a class="whatsapp-btn" href="https://wa.me/919999999999?text=Hello%20Sri%20Varsha%20Beauty" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.373 0 0 5.373 0 12c0 2.11.55 4.08 1.6 5.84L0 24l6.48-1.6A11.86 11.86 0 0 0 12 24c6.627 0 12-5.373 12-12 0-3.19-1.25-6.18-3.48-8.52z" fill="#25D366"/>
-            <path d="M17.6 14.2c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.95 1.17-.18.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.28.3-.48.1-.2 0-.37-.05-.52-.05-.15-.68-1.64-.93-2.25-.24-.59-.48-.51-.66-.52-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.03 1.01-1.03 2.46s1.05 2.85 1.2 3.05c.15.2 2.07 3.16 5.02 4.43 2.95 1.27 2.95.85 3.48.8.53-.05 1.7-.69 1.94-1.36.24-.67.24-1.25.17-1.36-.07-.1-.25-.15-.55-.3z" fill="#fff"/>
-        </svg>
-    </a>
+    <div class="grid" role="list">
+      <div class="card" role="listitem">
+        <h3>Beauty Services</h3>
+        <ul class="simple-list">
+          <li>Bridal makeup</li>
+          <li>Party / function makeup</li>
+          <li>Hair styling</li>
+          <li>Facial, threading, waxing</li>
+          <li>Manicure & pedicure</li>
+        </ul>
+      </div>
+
+      <div class="card" role="listitem">
+        <h3>Saree Rolling & Draping</h3>
+        <ul class="simple-list">
+          <li>Saree draping for weddings & functions</li>
+          <li>Pleats and pinning (secure & comfortable)</li>
+          <li>Rolling for travel and storage</li>
+          <li>Quick drape changes for photos</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="subhead">Popular Packages</h3>
+    <div class="services-list">
+      <div class="service-item"><strong>Bridal Complete</strong><br/>Makeup + hair + trial (if needed)</div>
+      <div class="service-item"><strong>Party Glam</strong><br/>Makeup + hair for functions</div>
+      <div class="service-item"><strong>Saree Draping</strong><br/>Pleats + pinning for events</div>
+      <div class="service-item"><strong>Travel Rolling</strong><br/>Neat rolling & packing</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section" aria-labelledby="about-title">
+    <h2 id="about-title">About</h2>
+    <p>
+      <strong>Sri Varsha Beauty</strong> provides makeup and saree services with care and hygiene.
+      We match your look to your outfit and event. We also offer home visits and venue service.
+    </p>
+
+    <div class="mini-facts">
+      <div class="fact"><strong>Clean & Hygienic</strong><br/>Fresh tools and products</div>
+      <div class="fact"><strong>On Time</strong><br/>We respect your schedule</div>
+      <div class="fact"><strong>Easy Booking</strong><br/>Call or WhatsApp</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact & Booking</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Contact</h3>
+        <p>
+          <strong>Phone:</strong> <a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a><br/>
+          <strong>Email:</strong> <a href="mailto:info@example.com">info@example.com</a><br/>
+          <strong>Location:</strong> Karimnagar, Telangana
+        </p>
+
+        <p>
+          <a class="whatsapp-inline"
+             href="https://wa.me/919999999999?text=Hello%20Sri%20Varsha%20Beauty%20I%20want%20to%20book%20a%20service"
+             target="_blank" rel="noopener">
+            WhatsApp to Book
+          </a>
+        </p>
+
+        <p><strong>Hours:</strong> Mon–Sat 09:00–19:00</p>
+        <p><a href="https://share.google/z4MzNFrTycgTxZy8a" target="_blank" rel="noopener">Open in Google Maps</a></p>
+      </div>
+
+      <div class="card">
+        <h3>Quick Booking Form</h3>
+        <form id="waBookingForm">
+  <label for="name">Name</label>
+  <input id="name" name="Name" type="text" required placeholder="Your name">
+
+  <label for="phone">Phone</label>
+  <input id="phone" name="Phone" type="tel" required placeholder="+91XXXXXXXXXX">
+
+  <label for="service">What do you need?</label>
+  <input id="service" name="Service" type="text" placeholder="Bridal makeup / Saree draping / Facial">
+
+  <label for="message">Date, time, and place</label>
+  <textarea id="message" name="Message" rows="4" placeholder="Example: Feb 12, 10 AM, Home / Venue"></textarea>
+
+  <!-- WhatsApp submit -->
+  <button type="submit">Send on WhatsApp</button>
+
+  <p style="margin-top:10px;color:var(--muted);font-size:0.95rem;">
+    After you tap “Send on WhatsApp”, it will open WhatsApp. Then press Send.
+  </p>
+</form>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER (with About + Contact & Booking) -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3>About Sri Varsha Beauty</h3>
+      <p>
+        Bridal makeup, party makeup, hair styling, facials, and saree draping in Karimnagar.
+        Clean work, on-time service, easy booking.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact & Booking</h3>
+      <p>
+        <strong>Phone:</strong> <a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a><br/>
+        <strong>Email:</strong> <a href="mailto:info@example.com">info@example.com</a><br/>
+        <strong>Location:</strong> Karimnagar, Telangana
+      </p>
+      <p>
+        <a class="whatsapp-inline"
+           href="https://wa.me/919999999999?text=Hello%20Sri%20Varsha%20Beauty%20I%20want%20to%20book%20a%20service"
+           target="_blank" rel="noopener">
+          WhatsApp to Book
+        </a>
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <p>
+        <a href="#promotions">Offers</a><br/>
+        <a href="#services">Services</a><br/>
+        <a href="#about">About</a><br/>
+        <a href="#contact">Contact</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © <span id="year"></span> Sri Varsha Beauty — All rights reserved.
+  </div>
+</footer>
+
+<!-- Floating WhatsApp button (this is the one that was missing) -->
+<a class="whatsapp-btn"
+   href="https://wa.me/919999999999?text=Hello%20Sri%20Varsha%20Beauty"
+   target="_blank" rel="noopener"
+   aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.373 0 0 5.373 0 12c0 2.11.55 4.08 1.6 5.84L0 24l6.48-1.6A11.86 11.86 0 0 0 12 24c6.627 0 12-5.373 12-12 0-3.19-1.25-6.18-3.48-8.52z" fill="#25D366"/>
+    <path d="M17.6 14.2c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.95 1.17-.18.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.28.3-.48.1-.2 0-.37-.05-.52-.05-.15-.68-1.64-.93-2.25-.24-.59-.48-.51-.66-.52-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.03 1.01-1.03 2.46s1.05 2.85 1.2 3.05c.15.2 2.07 3.16 5.02 4.43 2.95 1.27 2.95.85 3.48.8.53-.05 1.7-.69 1.94-1.36.24-.67.24-1.25.17-1.36-.07-.1-.25-.15-.55-.3z" fill="#fff"/>
+  </svg>
+</a>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // WhatsApp pop on scroll
+  (function(){
+    const btn = document.querySelector('.whatsapp-btn');
+    if(!btn) return;
+
+    let lastPop = 0;
+    window.addEventListener('scroll', () => {
+      const now = Date.now();
+      if (now - lastPop < 900) return;
+      lastPop = now;
+
+      btn.classList.add('is-pop');
+      setTimeout(() => btn.classList.remove('is-pop'), 220);
+    }, { passive: true });
+  })();
+</script>
+<!-- <script>
+  document.addEventListener("contextmenu", (e) => e.preventDefault());
+</script> -->
+
 </body>
 </html>
+
