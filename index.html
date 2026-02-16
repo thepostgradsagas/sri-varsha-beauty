@@ -1,288 +1,428 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Sri Varsha Beauty — Beauty & Saree Rolling Services</title>
-    <meta name="description" content="Sri Varsha Beauty offers professional beauty treatments and expert saree rolling & draping services. Bridal makeup, hair styling, saree pleating, on-site draping and more. Contact for bookings." />
-    <meta name="keywords" content="beauty salon, saree rolling, saree draping, bridal makeup, hair styling, facials, on-site saree service, Sri Varsha Beauty" />
-    <meta property="og:title" content="Sri Varsha Beauty — Beauty & Saree Rolling Services" />
-    <meta property="og:description" content="Professional beauty treatments and saree rolling/draping services for brides and events. Book now." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
-    <link rel="canonical" href="https://example.com/" />
-    <style>
-       :root{
-  --pink:#120a0d;     /* pinkish accent */
-  --white:#ffffff;   /* white */
-  --muted:#666;
-  --bg:#fff;
-}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sri Varsha Beauty — Beauty & Saree Rolling Services</title>
+  <meta name="description" content="Sri Varsha Beauty offers professional beauty treatments and expert saree rolling & draping services. Bridal makeup, hair styling, saree pleating, on-site draping and more. Contact for bookings." />
+  <meta name="keywords" content="beauty salon, saree rolling, saree draping, bridal makeup, hair styling, facials, on-site saree service, Sri Varsha Beauty" />
+  <meta property="og:title" content="Sri Varsha Beauty — Beauty & Saree Rolling Services" />
+  <meta property="og:description" content="Professional beauty treatments and saree rolling/draping services for brides and events. Book now." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://example.com/" />
 
-*{box-sizing:border-box}
+  <style>
+    :root{
+      --pink:#ca2662;
+      --white:#ffffff;
+      --muted:#666;
+      --bg:#fff;
+    }
 
-body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-  line-height:1.5;
-  color:#222;
-  margin:0;
-  background:var(--bg);
-}
+    *{box-sizing:border-box}
 
-/* HEADER (two colors only: white + pink) */
-header{
-  background:var(--white);
-  border-bottom:2px solid var(--pink);
-  padding:14px 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      line-height:1.5;
+      color:#222;
+      margin:0;
+      background:var(--bg);
+    }
 
-.brand{
-  font-weight:900;
-  color:var(--pink);
-  font-size:1.35rem;
-  letter-spacing:0.10em;
-  text-transform:uppercase;
-  line-height:1;
-}
+    /* HEADER (two colors only: white + pink) */
+    header{
+      background:var(--white);
+      border-bottom:2px solid var(--pink);
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
 
-nav{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-}
+    .brand{
+      font-weight:900;
+      color:var(--pink);
+      font-size:1.35rem;
+      letter-spacing:0.10em;
+      text-transform:uppercase;
+      line-height:1;
+    }
 
-nav a{
-  margin-left:0;
-  color:var(--pink);
-  text-decoration:none;
-  font-size:1rem;
-  font-weight:700;
-  padding:8px 10px;
-  border-radius:10px;
-  letter-spacing:0.02em;
-}
+    nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
 
-nav a:hover,
-nav a:focus-visible{
-  background:var(--pink);
-  color:var(--white);
-  outline:none;
-}
+    nav a{
+      margin-left:0;
+      color:var(--pink);
+      text-decoration:none;
+      font-size:1rem;
+      font-weight:700;
+      padding:8px 10px;
+      border-radius:10px;
+      letter-spacing:0.02em;
+    }
 
-/* PAGE LAYOUT */
-.container{max-width:980px;margin:28px auto;padding:0 18px}
+    nav a:hover,
+    nav a:focus-visible{
+      background:var(--pink);
+      color:var(--white);
+      outline:none;
+    }
 
-.hero{
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-  padding:28px;
-  border-radius:8px;
-  background:linear-gradient(180deg,#fff,#fff);
-  box-shadow:0 2px 8px rgba(0,0,0,.04);
-}
+    /* PAGE LAYOUT */
+    .container{max-width:980px;margin:28px auto;padding:0 18px}
 
-.cta{
-  background:var(--pink);
-  color:var(--white);
-  padding:10px 14px;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:700;
-  display:inline-block;
-}
+    .hero{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      padding:28px;
+      border-radius:8px;
+      background:linear-gradient(180deg,#fff,#fff);
+      box-shadow:0 2px 8px rgba(0,0,0,.04);
+    }
 
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .cta{
+      background:var(--pink);
+      color:var(--white);
+      padding:10px 14px;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:700;
+      display:inline-block;
+    }
 
-.card{
-  padding:16px;
-  border-radius:8px;
-  border:1px solid #f0f0f0;
-  background:#fff;
-}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 
-h1,h2{margin:0 0 10px 0}
+    .card{
+      padding:16px;
+      border-radius:8px;
+      border:1px solid #f0f0f0;
+      background:#fff;
+    }
 
-p{margin:0 0 12px 0;color:var(--muted)}
+    h1,h2{margin:0 0 10px 0}
 
-ul{margin:8px 0 0 18px}
+    p{margin:0 0 12px 0;color:var(--muted)}
 
-.services-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    ul{margin:8px 0 0 18px}
 
-.service-item{
-  padding:10px;
-  border-radius:6px;
-  background:#fff;
-  border:1px dashed #f2f2f2;
-}
+    .services-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 
-footer{
-  padding:18px;
-  text-align:center;
-  color:#777;
-  font-size:0.95rem;
-  border-top:1px solid #f0f0f0;
-  margin-top:28px;
-}
+    .service-item{
+      padding:10px;
+      border-radius:6px;
+      background:#fff;
+      border:1px dashed #f2f2f2;
+    }
 
-form input,form textarea{
-  width:100%;
-  padding:10px;
-  margin-top:6px;
-  border:1px solid #e6e6e6;
-  border-radius:6px;
-}
+    footer{
+      padding:18px;
+      text-align:center;
+      color:#777;
+      font-size:0.95rem;
+      border-top:1px solid #f0f0f0;
+      margin-top:28px;
+    }
 
-form button{
-  margin-top:8px;
-  padding:10px 14px;
-  border-radius:6px;
-  border:0;
-  background:var(--pink);
-  color:var(--white);
-  font-weight:700;
-  cursor:pointer;
-}
+    form input,form textarea{
+      width:100%;
+      padding:10px;
+      margin-top:6px;
+      border:1px solid #e6e6e6;
+      border-radius:6px;
+    }
 
-@media (max-width:800px){
-  .grid,.services-list{grid-template-columns:1fr}
-}
+    form button{
+      margin-top:8px;
+      padding:10px 14px;
+      border-radius:6px;
+      border:0;
+      background:var(--pink);
+      color:var(--white);
+      font-weight:700;
+      cursor:pointer;
+    }
 
-/* Floating WhatsApp button (base styles) */
-.whatsapp-btn{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  background:#25D366;
-  color:#fff;
-  width:54px;
-  height:54px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 6px 18px rgba(0,0,0,.12);
-  text-decoration:none;
-  z-index:1000;
-  touch-action:manipulation;
+    @media (max-width:800px){
+      .grid,.services-list{grid-template-columns:1fr}
+    }
 
-  /* pop animation support */
-  transform:translateZ(0);
-  transition:transform .18s ease, box-shadow .18s ease;
-  will-change:transform;
-}
+    /* Floating WhatsApp button (base styles) */
+    .whatsapp-btn{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      background:#25D366;
+      color:#fff;
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 6px 18px rgba(0,0,0,.12);
+      text-decoration:none;
+      z-index:1000;
+      touch-action:manipulation;
 
-.whatsapp-btn svg{width:24px;height:24px;display:block}
+      transform:translateZ(0);
+      transition:transform .18s ease, box-shadow .18s ease;
+      will-change:transform;
+    }
 
-/* Mobile sizing */
-@media (max-width:600px){
-  .whatsapp-btn{
-    right:14px;
-    bottom:calc(14px + env(safe-area-inset-bottom));
-    width:62px;
-    height:62px;
-  }
-  .whatsapp-btn svg{width:28px;height:28px}
-}
+    .whatsapp-btn svg{width:24px;height:24px;display:block}
 
-/* Pop effect class */
-.whatsapp-btn.is-pop{
-  transform:scale(1.08);
-  box-shadow:0 10px 26px rgba(0,0,0,.18);
-}
+    @media (max-width:600px){
+      .whatsapp-btn{
+        right:14px;
+        bottom:calc(14px + env(safe-area-inset-bottom));
+        width:62px;
+        height:62px;
+      }
+      .whatsapp-btn svg{width:28px;height:28px}
+    }
 
+    .whatsapp-btn.is-pop{
+      transform:scale(1.08);
+      box-shadow:0 10px 26px rgba(0,0,0,.18);
+    }
 
-/* Mobile adjustments */
-@media (max-width:600px){
-  .container{padding-bottom:calc(92px + env(safe-area-inset-bottom));}
+    @media (max-width:600px){
+      .container{padding-bottom:calc(92px + env(safe-area-inset-bottom));}
 
-  .whatsapp-btn{
-    right:14px;
-    bottom:calc(14px + env(safe-area-inset-bottom));
-    width:62px;
-    height:62px;
-  }
-  .whatsapp-btn svg{width:28px;height:28px}
-  .whatsapp-inline{padding:10px 14px;font-size:1rem}
+      header{padding:12px 14px}
+      .brand{font-size:1.2rem}
+      nav a{font-size:0.95rem;padding:8px 10px}
+    }
 
-  header{padding:12px 14px}
-  .brand{font-size:1.2rem}
-  nav a{font-size:0.95rem;padding:8px 10px}
-}
+    /* Promotions banner */
+    .promo-banner{
+      margin-top:40px;
+      border-radius:15px;
+      overflow:hidden;
+      border:1px solid #f3f3f3;
+      background:#fff;
+    }
 
-/* Promotions banner */
-.promo-banner{
-  margin-top:40px;
-  border-radius:15px;
-  overflow:hidden;
-  border:1px solid #f3f3f3;
-  background:#fff;
-}
+    .promo-banner a{display:block}
 
-.promo-banner a{display:block}
+    /* Responsive height (desktop->mobile) */
+    .promo-img{
+      width:100%;
+      height:clamp(320px, 35vw, 900px);
+      object-fit:cover;        /* FIX: object-fit:center is invalid */
+      object-position:center;  /* keep framing centered */
+      display:block;
+    }
+    @media (max-width:600px){
+      .promo-img{height:260px;}
+    }
 
-/* Responsive height (desktop->mobile) */
-.promo-img{
-  width:100%;
-  height:clamp(220px, 35vw, 520px);
-  object-fit:cover;
-  display:block;
-}
+    /* --- IMPROVED caption styling (more interesting, still clean) --- */
+    .promo-caption{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
 
-.promo-caption{
-  padding:12px 16px;
-  background:linear-gradient(180deg,rgba(0,0,0,0.03),transparent);
-  color:var(--muted);
-  font-size:0.95rem;
-}
+      padding:14px 16px;
+      color:#444;
+      font-size:0.98rem;
 
-.brand{display:flex;align-items:center;gap:10px}
+      /* soft premium look */
+      background:
+        radial-gradient(800px 140px at 10% 0%, rgba(202,38,98,.12), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.86));
+      border-top:1px solid rgba(202,38,98,.16);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.65);
+      backdrop-filter:saturate(1.2) blur(6px);
+    }
 
-.brand-avatar{
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  overflow:hidden;
-  border:2px solid var(--pink);
-  flex:0 0 auto;
-}
+    .promo-caption strong{
+      color:var(--pink);
+      font-weight:900;
+    }
 
-.brand-avatar img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
+    .promo-caption::before{
+      content:"";
+      position:absolute;
+      left:14px;
+      top:12px;
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:rgba(202,38,98,.35);
+      box-shadow:0 0 0 6px rgba(202,38,98,.10);
+      pointer-events:none;
+    }
 
-  /* small deterrents */
-  user-select:none;
-  -webkit-user-select:none;
-  -webkit-user-drag:none;
-  pointer-events:auto; /* stops right-click save on the image itself */
-}
+    .promo-caption{
+      padding-left:32px; /* make room for the dot */
+    }
 
+    .promo-cta{
+      margin-left:auto;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
 
-@media (max-width:600px){
-  .promo-img{height:220px;}      /* FIX: was 10px */
-  .promo-caption{font-size:0.95rem;padding:10px}
-  .brand-avatar{width:34px;height:34px}
-}
+      background:var(--pink);
+      color:var(--white);
+      text-decoration:none;
+      font-weight:900;
 
-    </style>
+      padding:10px 14px;
+      border-radius:999px;
+      box-shadow:0 10px 24px rgba(202,38,98,.22);
+      transform:translateZ(0);
+      transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+      white-space:nowrap;
+    }
+
+    .promo-cta:hover,
+    .promo-cta:focus-visible{
+      outline:none;
+      transform:translateY(-1px);
+      box-shadow:0 14px 30px rgba(202,38,98,.28);
+      filter:saturate(1.05);
+    }
+
+    @media (max-width:600px){
+      .promo-caption{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .promo-cta{
+        width:100%;
+        justify-content:center;
+      }
+    }
+
+    /* Promo slider */
+    .promo-slider{ position:relative; }
+
+    .promo-viewport{ overflow:hidden; }
+
+    .promo-track{
+      display:flex;
+      width:100%;
+      transform:translateX(0);
+
+      /* SMOOTHER + LESS STRESSFUL: shorter than 3s, but with gentle easing */
+      transition:transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+      will-change:transform;
+    }
+
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce){
+      .promo-track{ transition:none; }
+    }
+
+    .promo-slide{
+      min-width:100%;
+      background:#fff;
+    }
+
+    /* arrows */
+    .promo-nav{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      border:1px solid #f0f0f0;
+      background:rgba(255,255,255,.85);
+      color:#222;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      line-height:1;
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
+    }
+
+    .promo-prev{left:10px;}
+    .promo-next{right:10px;}
+
+    .promo-nav:hover,
+    .promo-nav:focus-visible{
+      outline:none;
+      background:#fff;
+    }
+
+    /* dots */
+    .promo-dots{
+      display:flex;
+      gap:8px;
+      justify-content:center;
+      padding:10px 0 14px;
+    }
+
+    .promo-dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      border:0;
+      background:#ddd;
+      cursor:pointer;
+    }
+
+    .promo-dot[aria-current="true"]{
+      background:var(--pink);
+    }
+
+    @media (max-width:600px){
+      .promo-nav{ width:38px;height:38px;font-size:26px; }
+    }
+
+    .brand{display:flex;align-items:center;gap:10px}
+
+    .brand-avatar{
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      overflow:hidden;
+      border:2px solid var(--pink);
+      flex:0 0 auto;
+    }
+
+    .brand-avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      user-select:none;
+      -webkit-user-select:none;
+      -webkit-user-drag:none;
+      pointer-events:auto;
+    }
+
+    @media (max-width:600px){
+      .brand-avatar{width:34px;height:34px}
+    }
+  </style>
 </head>
+
 <body>
 
 <header class="site-header">
   <div class="brand">
-    <span class="brand-avatar" aria-hidden="true">
+    <!-- <span class="brand-avatar" aria-hidden="true">
       <img src="./assets/avatar.jpg" alt="Vookanti Anusha" draggable="false" />
-    </span>
+    </span> -->
 
-    <span class="brand-main">SRI VARSHA</span>
-    <span class="brand-badge">BEAUTY</span>
+    <span class="brand-main">SRI VARSHA BEAUTY</span>
+    <!-- <span class="brand-badge">BEAUTY</span> -->
   </div>
 
   <nav class="site-nav">
@@ -293,21 +433,70 @@ form button{
 </header>
 
 <!-- Promotions / Offers -->
-<section id="promotions" class="promo-banner" aria-label="Current promotions">
-  <a href="#contact" class="promo-link">
-    <img
-      class="promo-img"
-      src="assets/PHOTO-2026-02-06-08-25-28.jpg"
-      alt="Special offer - Tap to book an appointment at Sri Varsha Beauty"
-      loading="lazy"
-      decoding="async"
-    />
-  </a>
+<section id="promotions" class="promo-banner promo-slider" aria-label="Current promotions">
+  <div class="promo-viewport">
+    <div class="promo-track">
 
-  <div class="promo-caption">
-    🎉 <strong>Limited Offer:</strong> Bridal Makeup + Saree Draping — special discount this month.
-    <a class="promo-cta" href="#contact">Book Now</a>
+      <!-- Slide 1 -->
+      <article class="promo-slide" aria-label="Promotion 1">
+        <a href="#contact" class="promo-link">
+          <img
+            class="promo-img"
+            src="assets/ChatGPT Image Feb 16, 2026, 12_58_56 PM.png"
+            alt="Special offer - Tap to book an appointment at Sri Varsha Beauty"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <div class="promo-caption">
+          <span>🎉 <strong>Limited Offer:</strong> Bridal Makeup + Saree Draping — special discount this month.</span>
+          <a class="promo-cta" href="#contact">Book Now</a>
+        </div>
+      </article>
+
+      <!-- Slide 2 -->
+      <article class="promo-slide" aria-label="Promotion 2">
+        <a href="#services" class="promo-link">
+          <img
+            class="promo-img"
+            src="assets/ChatGPT Image Feb 16, 2026, 12_58_56 PM.png"
+            alt="Party makeup + hair styling - Book now"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <div class="promo-caption">
+          <span>✨ <strong>Party Glam:</strong> Makeup + Hair for functions — look fresh in photos.</span>
+          <a class="promo-cta" href="#contact">Message Us</a>
+        </div>
+      </article>
+
+      <!-- Slide 3 -->
+      <article class="promo-slide" aria-label="Promotion 3">
+        <a href="#contact" class="promo-link">
+          <img
+            class="promo-img"
+            src="assets/ChatGPT Image Feb 16, 2026, 12_58_56 PM.png"
+            alt="Saree rolling for travel and storage - neat and safe"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <div class="promo-caption">
+          <span>🧳 <strong>Travel Rolling:</strong> Neat rolling & packing — no wrinkles, no stress.</span>
+          <a class="promo-cta" href="#contact">Book Rolling</a>
+        </div>
+      </article>
+
+    </div>
   </div>
+
+  <!-- Controls -->
+  <button class="promo-nav promo-prev" type="button" aria-label="Previous promotion">‹</button>
+  <button class="promo-nav promo-next" type="button" aria-label="Next promotion">›</button>
+
+  <!-- Dots -->
+  <div class="promo-dots" role="tablist" aria-label="Promotion slides"></div>
 </section>
 
 <main class="container">
@@ -411,32 +600,29 @@ form button{
       <div class="card">
         <h3>Quick Booking Form</h3>
         <form id="waBookingForm">
-  <label for="name">Name</label>
-  <input id="name" name="Name" type="text" required placeholder="Your name">
+          <label for="name">Name</label>
+          <input id="name" name="Name" type="text" required placeholder="Your name">
 
-  <label for="phone">Phone</label>
-  <input id="phone" name="Phone" type="tel" required placeholder="+91XXXXXXXXXX">
+          <label for="phone">Phone</label>
+          <input id="phone" name="Phone" type="tel" required placeholder="+91XXXXXXXXXX">
 
-  <label for="service">What do you need?</label>
-  <input id="service" name="Service" type="text" placeholder="Bridal makeup / Saree draping / Facial">
+          <label for="service">What do you need?</label>
+          <input id="service" name="Service" type="text" placeholder="Bridal makeup / Saree draping / Facial">
 
-  <label for="message">Date, time, and place</label>
-  <textarea id="message" name="Message" rows="4" placeholder="Example: Feb 12, 10 AM, Home / Venue"></textarea>
+          <label for="message">Date, time, and place</label>
+          <textarea id="message" name="Message" rows="4" placeholder="Example: Feb 12, 10 AM, Home / Venue"></textarea>
 
-  <!-- WhatsApp submit -->
-  <button type="submit">Send on WhatsApp</button>
+          <button type="submit">Send on WhatsApp</button>
 
-  <p style="margin-top:10px;color:var(--muted);font-size:0.95rem;">
-    After you tap “Send on WhatsApp”, it will open WhatsApp. Then press Send.
-  </p>
-</form>
-
+          <p style="margin-top:10px;color:var(--muted);font-size:0.95rem;">
+            After you tap “Send on WhatsApp”, it will open WhatsApp. Then press Send.
+          </p>
+        </form>
       </div>
     </div>
   </section>
 </main>
 
-<!-- FOOTER (with About + Contact & Booking) -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-col">
@@ -479,7 +665,6 @@ form button{
   </div>
 </footer>
 
-<!-- Floating WhatsApp button (this is the one that was missing) -->
 <a class="whatsapp-btn"
    href="https://wa.me/919999999999?text=Hello%20Sri%20Varsha%20Beauty"
    target="_blank" rel="noopener"
@@ -510,10 +695,99 @@ form button{
     }, { passive: true });
   })();
 </script>
-<!-- <script>
-  document.addEventListener("contextmenu", (e) => e.preventDefault());
-</script> -->
+
+<script>
+  (function(){
+    const slider = document.querySelector('.promo-slider');
+    if(!slider) return;
+
+    const track = slider.querySelector('.promo-track');
+    const slides = Array.from(slider.querySelectorAll('.promo-slide'));
+    const prevBtn = slider.querySelector('.promo-prev');
+    const nextBtn = slider.querySelector('.promo-next');
+    const dotsWrap = slider.querySelector('.promo-dots');
+
+    let index = 0;
+    let autoplayId = null;
+
+    /* LESS STRESSFUL: slower autoplay */
+    const AUTOPLAY_MS = 9000; // was 4500
+
+    // Build dots
+    slides.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'promo-dot';
+      b.setAttribute('aria-label', `Go to promotion ${i + 1}`);
+      b.addEventListener('click', () => goTo(i, true));
+      dotsWrap.appendChild(b);
+    });
+
+    const dots = Array.from(slider.querySelectorAll('.promo-dot'));
+
+    function update(){
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((d, i) => d.setAttribute('aria-current', i === index ? 'true' : 'false'));
+    }
+
+    function goTo(i, userAction=false){
+      index = (i + slides.length) % slides.length;
+      update();
+      if(userAction) restartAutoplay();
+    }
+
+    function next(userAction=false){ goTo(index + 1, userAction); }
+    function prev(userAction=false){ goTo(index - 1, userAction); }
+
+    nextBtn.addEventListener('click', () => next(true));
+    prevBtn.addEventListener('click', () => prev(true));
+
+    function startAutoplay(){
+      stopAutoplay();
+      autoplayId = setInterval(() => next(false), AUTOPLAY_MS);
+    }
+    function stopAutoplay(){
+      if(autoplayId) clearInterval(autoplayId);
+      autoplayId = null;
+    }
+    function restartAutoplay(){
+      startAutoplay();
+    }
+
+    slider.addEventListener('mouseenter', stopAutoplay);
+    slider.addEventListener('mouseleave', startAutoplay);
+
+    // Pause autoplay when tab is hidden (less “busy” feeling)
+    document.addEventListener('visibilitychange', () => {
+      if(document.hidden) stopAutoplay();
+      else startAutoplay();
+    });
+
+    // Swipe support (mobile)
+    let startX = 0, isDown = false;
+    slider.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isDown = true;
+      stopAutoplay();
+    }, {passive:true});
+
+    slider.addEventListener('touchend', (e) => {
+      if(!isDown) return;
+      isDown = false;
+      const endX = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientX : startX;
+      const dx = endX - startX;
+      if(Math.abs(dx) > 40){
+        dx < 0 ? next(true) : prev(true);
+      } else {
+        restartAutoplay();
+      }
+    }, {passive:true});
+
+    // Init
+    update();
+    startAutoplay();
+  })();
+</script>
 
 </body>
 </html>
-
