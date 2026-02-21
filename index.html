@@ -642,7 +642,20 @@ input.invalid, textarea.invalid{
       header.site-header{padding:12px 14px}
       .brand-main{font-size:1.05rem;letter-spacing:0.12em}
       .brand-sub{font-size:0.60rem;letter-spacing:0.08em}
-      .brand::after{display:none}
+      .brand::after{
+  display:inline-flex;
+  margin-left:0;
+  margin-top:8px;
+  transform:none;
+  height:20px;
+  padding:0 9px;
+  font-size:.68rem;
+  letter-spacing:.06em;
+  align-self:flex-start;
+}
+.brand{
+  flex-wrap:wrap;        /* allows EST. 2004 to drop below neatly */
+}
       nav.site-nav a{font-size:0.95rem;padding:8px 10px}
 
       .promo-img{height:260px}
@@ -817,7 +830,43 @@ nav.site-nav{
     margin:0 auto;
   }
 }
+/* Owner card */
+.owner-card{
+  margin-top:16px;
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  padding:16px;
+  border-radius:16px;
+  border:1px solid rgba(202,38,98,.14);
+  background:rgba(255,255,255,.92);
+  box-shadow:0 10px 22px rgba(0,0,0,.04);
+}
 
+.owner-photo{
+  width:120px;
+  height:120px;
+  border-radius:16px;
+  object-fit:cover;
+  border:1px solid rgba(0,0,0,.08);
+  flex:0 0 auto;
+}
+
+.owner-info{ flex:1; min-width:0; }
+.owner-title{ margin:0 0 6px 0; font-size:1.05rem; }
+.owner-name{ margin:0 0 8px 0; color:#222; }
+.owner-text{ margin:0 0 12px 0; color:var(--muted); }
+
+.owner-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+@media (max-width:600px){
+  .owner-card{ flex-direction:column; }
+  .owner-photo{ width:100%; height:auto; aspect-ratio: 4 / 3; }
+}
 </style>
 </head>
 
@@ -912,6 +961,7 @@ nav.site-nav{
       Bridal-ready looks, party makeup, and saree services—done neatly, hygienically, and on time.
       Message us on WhatsApp to book.
     </p>
+    <p style="margin:0;color:var(--muted);font-weight:800;">Owned by <strong> Mrs. Anusha Vookanti</strong></p>
 
     <div class="hero-actions">
       <a class="cta" href="#contact">Book Now</a>
@@ -980,10 +1030,10 @@ nav.site-nav{
   <!-- ABOUT -->
   <section id="about" class="section" aria-labelledby="about-title">
     <h2 id="about-title">About</h2>
-    <p>
-      <strong>Sri Varsha Beauty</strong> provides makeup and saree services with care and hygiene.
-      We match your look to your outfit and event, and we also offer home visits and venue service.
-    </p>
+<p>
+  <strong>Sri Varsha Beauty</strong> is a trusted beauty salon in <strong>Karimnagar, Telangana</strong> for bridal & party makeup, hair styling, and professional saree draping, pleating, and rolling.
+  We create looks that suit your outfit and occasion, with optional home/venue service for weddings and functions.
+</p>
 
     <div class="mini-facts" aria-label="Why choose us">
       <div class="fact">
@@ -999,6 +1049,42 @@ nav.site-nav{
         Call or WhatsApp anytime
       </div>
     </div>
+    <div class="owner-card" aria-label="Owner information">
+  <img
+    class="owner-photo"
+    src="assets/owner.jpg"
+    alt="Owner of Sri Varsha Beauty"
+    loading="lazy"
+    decoding="async"
+  />
+
+  <div class="owner-info">
+    <h3 class="owner-title">Owner</h3>
+    <p class="owner-name"><strong><!-- CHANGE THIS --> Mrs. ANUSHA VOOKANTI</strong></p>
+<p class="owner-text">
+  With 12+ years of experience, she brings passion, creativity, and a warm, professional touch to every bridal look and saree service.
+  Clients love her easy-going nature—most leave feeling confident, comfortable, and smiling.
+</p>
+
+<p class="owner-text">
+  <strong>Salon Services:</strong> Bridal & party makeup, hair styling, saree draping/pleating/rolling, facials & cleanup, waxing,
+  threading, manicure/pedicure, de-tan, and basic skincare—done neatly, hygienically, and on time.
+  WhatsApp us for bookings and availability.
+</p>
+
+<p class="owner-text" lang="te">
+  12+ సంవత్సరాల అనుభవంతో ఆమె ప్రతి బ్రైడల్ లుక్‌కి, సారీ కేర్ సేవలకు ప్రేమ, క్రియేటివిటీ, ప్రొఫెషనల్ టచ్ ఇస్తుంది.
+  ఆమె స్నేహపూర్వకంగా, సులభంగా కలిసిపోతూ పని చేస్తుంది—వచ్చిన ప్రతి కస్టమర్ సంతోషంగా, చిరునవ్వుతోనే వెళ్తారు.
+</p>
+
+<p class="owner-text" lang="te">
+  <strong>సలోన్ సేవలు:</strong> బ్రైడల్ & పార్టీ మేకప్, హెయిర్ స్టైలింగ్, సారీ డ్రేపింగ్/ప్లీటింగ్/రోలింగ్,
+  ఫేషియల్స్ & క్లీనప్, వ్యాక్సింగ్, థ్రెడింగ్, మ్యానిక్యూర్/పెడిక్యూర్, డీ-టాన్, బేసిక్ స్కిన్‌కేర్ సేవలు—
+  శుభ్రంగా, హైజీనిక్‌గా, సమయానికి పూర్తి చేస్తాము. బుకింగ్ & అందుబాటు కోసం WhatsApp చేయండి.
+</p>
+
+  </div>
+</div>
   </section>
 
   <!-- CONTACT -->
@@ -1056,7 +1142,7 @@ nav.site-nav{
        <p><strong>Hours:</strong> Mon–Sat 10:00 AM – 9:00 PM</p>
 
       <a class="whatsapp-inline"
-         href="https://wa.me/916309875985?text=Hello%20Sri%20Varsha%20Beauty%20I%20want%20to%20book%20a%20service"
+         href="https://wa.me/919000445081?text=Hello%20Sri%20Varsha%20Beauty%20I%20want%20to%20book%20a%20service"
          target="_blank" rel="noopener">
         WhatsApp to Book
       </a>
