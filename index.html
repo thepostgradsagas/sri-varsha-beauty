@@ -8,8 +8,6 @@
 
 <meta name="description" content="Sri Varsha Beauty Parlour in Karimnagar, Telangana offers professional bridal makeup, wedding & party makeup, facials, waxing, eyebrow threading, de-tan treatments, saree rolling, box pleating, saree draping & travel rolling services. Book your appointment today." />
 
-<meta name="keywords" content="Sri Varsha Beauty Parlour Karimnagar, bridal makeup Karimnagar, wedding makeup artist Karimnagar, party makeup Karimnagar, beauty parlour in Karimnagar, facials Karimnagar, waxing Karimnagar, eyebrow threading Karimnagar, de tan services Karimnagar, saree rolling Karimnagar, saree box pleating Karimnagar, saree draping Karimnagar, travel saree rolling service" />
-
 <meta name="author" content="Sri Varsha Beauty Parlour" />
 <meta name="robots" content="index, follow" />
 
@@ -51,6 +49,33 @@
       color:#222;
       margin:0;
       background:var(--bg);
+    }
+
+    .skip-link{
+      position:absolute;
+      left:-9999px;
+      top:10px;
+      z-index:1100;
+      padding:10px 14px;
+      border-radius:10px;
+      background:#111;
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+    }
+
+    .skip-link:focus-visible{
+      left:12px;
+      outline:3px solid #fff;
+      outline-offset:2px;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible{
+      outline:3px solid #0b5fff;
+      outline-offset:2px;
     }
 
     p{margin:0 0 12px 0;color:var(--muted)}
@@ -139,7 +164,6 @@
     nav.site-nav a:focus-visible{
       background:rgba(255,255,255,.18);
       border-color:rgba(255,255,255,.38);
-      outline:none;
       transform:translateY(-1px);
     }
 
@@ -230,7 +254,6 @@
 
     .promo-cta:hover,
     .promo-cta:focus-visible{
-      outline:none;
       transform:translateY(-1px);
       box-shadow:0 14px 30px rgba(202,38,98,.28);
       filter:saturate(1.05);
@@ -277,7 +300,6 @@
 
     .promo-nav:hover,
     .promo-nav:focus-visible{
-      outline:none;
       background:#fff;
     }
 
@@ -368,7 +390,6 @@
 
     .cta:hover,
     .cta:focus-visible{
-      outline:none;
       transform:translateY(-1px);
       box-shadow:0 14px 30px rgba(202,38,98,.28);
       filter:saturate(1.04);
@@ -389,7 +410,6 @@
 
     .cta-outline:hover,
     .cta-outline:focus-visible{
-      outline:none;
       transform:translateY(-1px);
       background:rgba(202,38,98,.10);
       border-color:rgba(202,38,98,.34);
@@ -603,6 +623,14 @@ input.invalid, textarea.invalid{
 .whatsapp-btn{ animation: wa-bounce 2.6s ease-in-out infinite; }
 .whatsapp-btn .wa-icon{ animation: wa-pulse 2.6s ease-out infinite; }
 
+/* JS adds/removes .is-pop on scroll */
+.whatsapp-btn.is-pop{ animation: wa-pop 220ms ease-out; }
+@keyframes wa-pop{
+  0%{ transform:translateY(0) scale(1); }
+  50%{ transform:translateY(-4px) scale(1.03); }
+  100%{ transform:translateY(0) scale(1); }
+}
+
 .whatsapp-btn:hover{
   transform:translateY(-2px);
   box-shadow:0 18px 36px rgba(0,0,0,.16);
@@ -611,6 +639,7 @@ input.invalid, textarea.invalid{
 /* Respect reduced-motion */
 @media (prefers-reduced-motion: reduce){
   .whatsapp-btn,
+  .whatsapp-btn.is-pop,
   .whatsapp-btn .wa-icon{ animation:none; }
 }
 
@@ -664,14 +693,6 @@ input.invalid, textarea.invalid{
       .promo-nav{width:38px;height:38px;font-size:26px}
 
       .container{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
-
-      .whatsapp-btn{
-        right:14px;
-        bottom:calc(14px + env(safe-area-inset-bottom));
-        width:62px;
-        height:62px;
-      }
-      .whatsapp-btn svg{width:28px;height:28px}
 
       /* Header: stack and push nav to right on phone */
 header.site-header{ flex-wrap:wrap; }
@@ -740,7 +761,6 @@ nav.site-nav{
 .site-footer a:hover,
 .site-footer a:focus-visible{
   text-decoration:underline;
-  outline:none;
 }
 
 /* Quick links list */
@@ -871,6 +891,7 @@ nav.site-nav{
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header class="site-header">
   <div class="brand">
@@ -880,7 +901,7 @@ nav.site-nav{
     </div>
   </div>
 
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Primary">
     <a href="#services">Services</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
@@ -888,7 +909,7 @@ nav.site-nav{
 </header>
 
 <!-- Promotions / Offers -->
-<section id="promotions" class="promo-banner promo-slider" aria-label="Current promotions">
+<section id="promotions" class="promo-banner promo-slider" aria-label="Current promotions" tabindex="0">
   <div class="promo-viewport">
 <div class="promo-track">
 
@@ -951,10 +972,10 @@ nav.site-nav{
   <button class="promo-nav promo-next" type="button" aria-label="Next promotion">›</button>
 
   <!-- Dots -->
-  <div class="promo-dots" role="tablist" aria-label="Promotion slides"></div>
+  <div class="promo-dots" role="group" aria-label="Promotion slides"></div>
 </section>
 
-<main class="container">
+<main id="main-content" class="container">
   <section class="hero" aria-labelledby="home-title">
     <h1 id="home-title">Makeup, Hair & Saree Draping in Karimnagar</h1>
     <p>
@@ -1060,7 +1081,7 @@ nav.site-nav{
 
   <div class="owner-info">
     <h3 class="owner-title">Owner</h3>
-    <p class="owner-name"><strong><!-- CHANGE THIS --> Mrs. ANUSHA VOOKANTI</strong></p>
+    <p class="owner-name"><strong>Mrs. ANUSHA VOOKANTI</strong></p>
 <p class="owner-text">
   With 22+ years of experience, she brings passion, creativity, and a warm, professional touch to every bridal look and saree service.
   Clients love her easy-going nature—most leave feeling confident, comfortable, and smiling.
@@ -1097,16 +1118,16 @@ nav.site-nav{
         <h3>Quick Booking Form</h3>
         <form id="waBookingForm" novalidate>
           <label for="name">Name</label>
-          <input id="name" name="Name" type="text" required placeholder="Your name">
+          <input id="name" name="Name" type="text" required autocomplete="name" placeholder="Your name">
 
           <label for="phone">Phone</label>
-          <input id="phone" name="Phone" type="tel" required placeholder="+91XXXXXXXXXX">
+          <input id="phone" name="Phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+91XXXXXXXXXX">
 
           <label for="service">What do you need?</label>
-          <input id="service" name="Service" type="text" placeholder="Bridal makeup / Saree draping / Facial">
+          <input id="service" name="Service" type="text" autocomplete="off" placeholder="Bridal makeup / Saree draping / Facial">
 
           <label for="message">Date, time, and place</label>
-          <textarea id="message" name="Message" rows="4" placeholder="Example: Feb 12, 10 AM, Home / Venue"></textarea>
+          <textarea id="message" name="Message" rows="4" autocomplete="off" placeholder="Example: Feb 12, 10 AM, Home / Venue"></textarea>
 
           <button type="submit">Send on WhatsApp</button>
 
@@ -1244,6 +1265,7 @@ nav.site-nav{
       b.type = 'button';
       b.className = 'promo-dot';
       b.setAttribute('aria-label', `Go to promotion ${i + 1}`);
+      b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
       b.addEventListener('click', () => goTo(i, true));
       dotsWrap.appendChild(b);
     });
@@ -1252,7 +1274,11 @@ nav.site-nav{
 
     function update(){
       track.style.transform = `translateX(-${index * 100}%)`;
-      dots.forEach((d, i) => d.setAttribute('aria-current', i === index ? 'true' : 'false'));
+      dots.forEach((d, i) => {
+        const isActive = i === index;
+        d.setAttribute('aria-current', isActive ? 'true' : 'false');
+        d.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
     }
 
     function goTo(i, userAction=false){
@@ -1281,6 +1307,15 @@ nav.site-nav{
 
     slider.addEventListener('mouseenter', stopAutoplay);
     slider.addEventListener('mouseleave', startAutoplay);
+    slider.addEventListener('keydown', (e) => {
+      if(e.key === 'ArrowRight'){
+        e.preventDefault();
+        next(true);
+      } else if(e.key === 'ArrowLeft'){
+        e.preventDefault();
+        prev(true);
+      }
+    });
 
     document.addEventListener('visibilitychange', () => {
       if(document.hidden) stopAutoplay();
@@ -1328,6 +1363,9 @@ nav.site-nav{
         err = document.createElement("div");
         err.className = "field-error";
         err.dataset.for = input.id;
+        err.id = `${input.id}-error`;
+        err.setAttribute("role", "alert");
+        err.setAttribute("aria-live", "assertive");
         input.insertAdjacentElement("afterend", err);
       }
       return err;
@@ -1335,13 +1373,17 @@ nav.site-nav{
 
     function setError(input, msg){
       input.classList.add("invalid");
+      input.setAttribute("aria-invalid", "true");
       const err = getErrEl(input);
+      input.setAttribute("aria-describedby", err.id);
       err.textContent = msg;
       err.style.display = msg ? "block" : "none";
     }
 
     function clearError(input){
       input.classList.remove("invalid");
+      input.removeAttribute("aria-invalid");
+      input.removeAttribute("aria-describedby");
       const err = input.parentElement.querySelector(`.field-error[data-for="${input.id}"]`);
       if(err){ err.textContent=""; err.style.display="none"; }
     }
