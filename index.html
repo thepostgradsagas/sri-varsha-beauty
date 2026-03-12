@@ -460,6 +460,69 @@
 
     .card h3{margin:0 0 10px 0;font-size:1.08rem}
 
+    .service-card-media{
+      display:grid;
+      gap:14px;
+    }
+
+    .service-card-copy{
+      display:grid;
+      gap:12px;
+      padding:16px;
+      border-radius:18px;
+      background:
+        radial-gradient(600px 140px at 10% 0%, rgba(202,38,98,.10), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
+      border:1px solid rgba(202,38,98,.12);
+    }
+
+    .service-card-copy p{
+      margin:0;
+      font-size:.97rem;
+      color:#5f4a53;
+    }
+
+    .saree-photo-wrap{
+      position:relative;
+      margin:0;
+      min-height:280px;
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 18px 34px rgba(202,38,98,.16);
+    }
+
+    .saree-photo-wrap::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(113,25,55,.06), rgba(113,25,55,.5));
+      pointer-events:none;
+    }
+
+    .saree-photo{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 18%;
+    }
+
+    .saree-photo-note{
+      position:absolute;
+      left:22px;
+      right:22px;
+      bottom:20px;
+      margin:0;
+      padding:10px 12px;
+      border-radius:14px;
+      color:#fff;
+      font-size:.9rem;
+      font-weight:800;
+      letter-spacing:.01em;
+      background:linear-gradient(180deg, rgba(113,25,55,.18), rgba(113,25,55,.72));
+      backdrop-filter:blur(6px);
+    }
+
     .simple-list{
       list-style:none;
       padding:0;
@@ -913,19 +976,23 @@ nav.site-nav{
   <div class="promo-viewport">
 <div class="promo-track">
 
-  <!-- Slide 1 (Existing) -->
+  <!-- Slide 1 -->
   <article class="promo-slide" aria-label="Promotion 1">
     <a href="#contact" class="promo-link">
-      <img
+      <video
         class="promo-img promo-img--contain"
-        src="assets/main-promo.png"
-        alt="Special offer - Tap to book an appointment at Sri Varsha Beauty"
-        loading="lazy"
-        decoding="async"
-      />
+        src="assets/sri_varsha_promo_banner_loop.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        data-loop-end="3"
+        aria-label="Sri Varsha Beauty promotional banner video"
+      ></video>
     </a>
     <div class="promo-caption">
-      <span>🎉 <strong>Limited Offer:</strong> Bridal Makeup + Saree Draping — special discount this month.</span>
+      <span>🌸 <strong>Sri Varsha Beauty:</strong> Bridal makeup, saree styling, and signature beauty care for every occasion.</span>
       <a class="promo-cta" href="#contact">Book Now</a>
     </div>
   </article>
@@ -1018,12 +1085,29 @@ nav.site-nav{
 
       <div class="card" role="listitem">
         <h3>Saree Services</h3>
-        <ul class="simple-list">
-          <li>Saree draping for weddings & functions</li>
-          <li>Pleats and pinning (secure & comfortable)</li>
-          <li>Saree rolling for travel and storage</li>
-          <li>Quick drape changes for photos</li>
-        </ul>
+        <div class="service-card-media">
+          <figure class="saree-photo-wrap">
+            <img
+              class="saree-photo"
+              src="assets/IMG_5600.JPG"
+              alt="Elegant saree draping look by Sri Varsha Beauty"
+              loading="lazy"
+            />
+            <p class="saree-photo-note">Handled with care, finished neatly, and delivered back with respect.</p>
+          </figure>
+          <div class="service-card-copy">
+            <ul class="simple-list">
+              <li>Saree draping for weddings & functions</li>
+              <li>Pleats and pinning (secure & comfortable)</li>
+              <li>Saree rolling for travel and storage</li>
+              <li>Quick drape changes for photos</li>
+            </ul>
+            <p>
+              We treat every saree with care and respect, and return it with the same attention you give it at home.
+              Fast, neat service is always a priority.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1252,6 +1336,7 @@ nav.site-nav{
 
     const track = slider.querySelector('.promo-track');
     const slides = Array.from(slider.querySelectorAll('.promo-slide'));
+    const slideVideos = slides.map((slide) => slide.querySelector('video'));
     const prevBtn = slider.querySelector('.promo-prev');
     const nextBtn = slider.querySelector('.promo-next');
     const dotsWrap = slider.querySelector('.promo-dots');
@@ -1272,12 +1357,41 @@ nav.site-nav{
 
     const dots = Array.from(slider.querySelectorAll('.promo-dot'));
 
+    slideVideos.forEach((video) => {
+      if(!video) return;
+      const loopEnd = Number(video.dataset.loopEnd || 0);
+      if(loopEnd > 0){
+        video.addEventListener('timeupdate', () => {
+          if(video.currentTime >= loopEnd){
+            video.currentTime = 0;
+            const playPromise = video.play();
+            if(playPromise && typeof playPromise.catch === 'function'){
+              playPromise.catch(() => {});
+            }
+          }
+        });
+      }
+    });
+
     function update(){
       track.style.transform = `translateX(-${index * 100}%)`;
       dots.forEach((d, i) => {
         const isActive = i === index;
         d.setAttribute('aria-current', isActive ? 'true' : 'false');
         d.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+
+      slideVideos.forEach((video, i) => {
+        if(!video) return;
+        if(i === index){
+          const playPromise = video.play();
+          if(playPromise && typeof playPromise.catch === 'function'){
+            playPromise.catch(() => {});
+          }
+        } else {
+          video.pause();
+          video.currentTime = 0;
+        }
       });
     }
 
