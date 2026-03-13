@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
 <title>Sri Varsha Beauty Parlour | Bridal Makeup & Saree Rolling in Karimnagar</title>
 
@@ -35,18 +38,19 @@
 
   <style>
     :root{
-      --pink:#ca2662;
+      --pink:#6e9277;
+      --secondary:#544541;
       --white:#ffffff;
       --muted:#666;
-      --bg:#fff;
+      --bg:#f7f5f1;
     }
 
     *{box-sizing:border-box}
 
     body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      font-family:"Manrope",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
       line-height:1.5;
-      color:#222;
+      color:var(--secondary);
       margin:0;
       background:var(--bg);
     }
@@ -82,8 +86,8 @@
 
     /* ===================== HEADER ===================== */
     header.site-header{
-      background:var(--pink);
-      border-bottom:2px solid rgba(255,255,255,.25);
+      background:#f7f5f1;
+      border-bottom:1px solid rgba(84,69,65,.18);
       padding:14px 18px;
       display:flex;
       align-items:center;
@@ -106,64 +110,56 @@
     }
 
     .brand-main{
+      font-family:"DM Serif Display",Georgia,"Times New Roman",serif;
       font-weight:900;
-      color:var(--white);
-      font-size:1.70rem;
-      letter-spacing:0.14em;
-      text-transform:uppercase;
-      text-shadow:0 1px 0 rgba(0,0,0,.08);
+      color:var(--pink);
+      font-size:1.85rem;
+      letter-spacing:0.04em;
+      text-transform:none;
     }
 
     .brand-sub{
-      color:rgba(255,255,255,.92);
+      color:var(--secondary);
       font-size:0.70rem;
       font-weight:800;
       letter-spacing:0.10em;
       text-transform:uppercase;
-      opacity:.95;
+      opacity:.82;
     }
 
-    .brand::after{
-      content:"EST. 2004";
-      margin-left:10px;
-      display:inline-flex;
-      align-items:center;
-      height:22px;
-      padding:0 10px;
-      border-radius:999px;
-      font-size:.72rem;
-      font-weight:800;
-      letter-spacing:.08em;
-      color:var(--white);
-      border:1px solid rgba(255,255,255,.35);
-      background:rgba(255,255,255,.12);
-      transform:translateY(-2px);
+    .brand-est{
+      font-family:"DM Serif Display",Georgia,"Times New Roman",serif;
+      font-style:italic;
+      font-size:.72em;
+      font-weight:400;
+      letter-spacing:.02em;
+      color:var(--secondary);
+      opacity:.85;
       white-space:nowrap;
     }
 
     nav.site-nav{
       display:flex;
       flex-wrap:wrap;
-      gap:10px;
+      gap:22px;
     }
 
     nav.site-nav a{
-      color:var(--white);
+      font-family:"Manrope",system-ui,sans-serif;
+      color:var(--pink);
       text-decoration:none;
       font-size:0.98rem;
       font-weight:800;
-      padding:9px 12px;
-      border-radius:999px;
-      letter-spacing:0.03em;
-      border:1px solid rgba(255,255,255,.22);
-      background:rgba(255,255,255,.08);
-      transition:transform .15s ease, background .15s ease, border-color .15s ease;
+      padding:4px 0;
+      letter-spacing:0.08em;
+      border:0;
+      background:none;
+      transition:transform .15s ease, color .15s ease;
     }
 
     nav.site-nav a:hover,
     nav.site-nav a:focus-visible{
-      background:rgba(255,255,255,.18);
-      border-color:rgba(255,255,255,.38);
+      color:var(--secondary);
       transform:translateY(-1px);
     }
 
@@ -206,15 +202,10 @@
       gap:14px;
 
       padding:14px 16px 14px 32px;
-      color:#444;
+      color:var(--secondary);
       font-size:0.98rem;
-
-      background:
-        radial-gradient(800px 140px at 10% 0%, rgba(202,38,98,.12), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.86));
-      border-top:1px solid rgba(202,38,98,.16);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.65);
-      backdrop-filter:saturate(1.2) blur(6px);
+      background:#f5f1ec;
+      border-top:1px solid rgba(84,69,65,.12);
     }
 
     .promo-caption strong{color:var(--pink);font-weight:900}
@@ -227,8 +218,8 @@
       width:10px;
       height:10px;
       border-radius:999px;
-      background:rgba(202,38,98,.35);
-      box-shadow:0 0 0 6px rgba(202,38,98,.10);
+      background:rgba(110,146,119,.45);
+      box-shadow:0 0 0 6px rgba(110,146,119,.12);
       pointer-events:none;
     }
 
@@ -246,7 +237,7 @@
 
       padding:10px 14px;
       border-radius:999px;
-      box-shadow:0 10px 24px rgba(202,38,98,.22);
+      box-shadow:none;
       transform:translateZ(0);
       transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
       white-space:nowrap;
@@ -255,7 +246,7 @@
     .promo-cta:hover,
     .promo-cta:focus-visible{
       transform:translateY(-1px);
-      box-shadow:0 14px 30px rgba(202,38,98,.28);
+      box-shadow:none;
       filter:saturate(1.05);
     }
 
@@ -332,11 +323,9 @@
       margin-top:18px;
       padding:22px;
       border-radius:16px;
-      border:1px solid #f3f3f3;
-      background:
-        radial-gradient(900px 220px at 10% 0%, rgba(202,38,98,.08), transparent 55%),
-        linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
-      box-shadow:0 10px 26px rgba(0,0,0,.05);
+      border:1px solid rgba(84,69,65,.10);
+      background:#ffffff;
+      box-shadow:0 4px 14px rgba(0,0,0,.04);
     }
 
     .section + .section{margin-top:18px}
@@ -347,18 +336,17 @@
       gap:18px;
       border-radius:18px;
       padding:26px;
-      border:1px solid rgba(202,38,98,.14);
-      background:
-        radial-gradient(900px 260px at 15% 0%, rgba(202,38,98,.12), transparent 55%),
-        linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.90));
-      box-shadow:0 14px 34px rgba(0,0,0,.06);
+      border:1px solid rgba(84,69,65,.10);
+      background:#ffffff;
+      box-shadow:0 4px 14px rgba(0,0,0,.04);
     }
 
     .hero h1{
+      font-family:"DM Serif Display",Georgia,"Times New Roman",serif;
       margin:0 0 10px 0;
-      font-size:clamp(1.5rem, 3.2vw, 2.05rem);
-      line-height:1.15;
-      letter-spacing:0.01em;
+      font-size:clamp(1.8rem, 3.8vw, 2.5rem);
+      line-height:1.08;
+      letter-spacing:.01em;
     }
 
     .hero p{
@@ -383,7 +371,7 @@
       text-decoration:none;
       font-weight:900;
       letter-spacing:.02em;
-      box-shadow:0 10px 24px rgba(202,38,98,.22);
+      box-shadow:none;
       transition:transform .16s ease, box-shadow .16s ease, filter .16s ease;
       display:inline-block;
     }
@@ -391,7 +379,7 @@
     .cta:hover,
     .cta:focus-visible{
       transform:translateY(-1px);
-      box-shadow:0 14px 30px rgba(202,38,98,.28);
+      box-shadow:none;
       filter:saturate(1.04);
     }
 
@@ -402,8 +390,8 @@
       font-weight:900;
       letter-spacing:.02em;
       color:var(--pink);
-      background:rgba(202,38,98,.06);
-      border:1px solid rgba(202,38,98,.22);
+      background:rgba(110,146,119,.08);
+      border:1px solid rgba(110,146,119,.26);
       transition:transform .16s ease, background .16s ease, border-color .16s ease;
       display:inline-block;
     }
@@ -411,8 +399,8 @@
     .cta-outline:hover,
     .cta-outline:focus-visible{
       transform:translateY(-1px);
-      background:rgba(202,38,98,.10);
-      border-color:rgba(202,38,98,.34);
+      background:rgba(110,146,119,.14);
+      border-color:rgba(110,146,119,.38);
     }
 
     .trust-line{
@@ -430,15 +418,16 @@
       border-radius:999px;
       font-weight:800;
       font-size:.92rem;
-      color:#333;
-      background:rgba(255,255,255,.75);
-      border:1px solid rgba(202,38,98,.14);
-      box-shadow:0 8px 18px rgba(0,0,0,.04);
+      color:var(--secondary);
+      background:#f3f0ea;
+      border:1px solid rgba(84,69,65,.10);
+      box-shadow:none;
     }
 
     .section h2{
+      font-family:"DM Serif Display",Georgia,"Times New Roman",serif;
       margin:0 0 10px 0;
-      font-size:1.35rem;
+      font-size:1.6rem;
       letter-spacing:.01em;
     }
 
@@ -453,12 +442,18 @@
     .card{
       padding:16px;
       border-radius:14px;
-      border:1px solid rgba(202,38,98,.10);
-      background:rgba(255,255,255,.92);
-      box-shadow:0 10px 22px rgba(0,0,0,.04);
+      border:1px solid rgba(84,69,65,.10);
+      background:#fcfbf8;
+      box-shadow:none;
     }
 
-    .card h3{margin:0 0 10px 0;font-size:1.08rem}
+    .card h3{
+      margin:0 0 10px 0;
+      font-family:"DM Serif Display",Georgia,"Times New Roman",serif;
+      font-size:1.3rem;
+      font-weight:400;
+      letter-spacing:.01em;
+    }
 
     .service-card-media{
       display:grid;
@@ -470,16 +465,14 @@
       gap:12px;
       padding:16px;
       border-radius:18px;
-      background:
-        radial-gradient(600px 140px at 10% 0%, rgba(202,38,98,.10), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
-      border:1px solid rgba(202,38,98,.12);
+      background:#f7f4ef;
+      border:1px solid rgba(84,69,65,.10);
     }
 
     .service-card-copy p{
       margin:0;
       font-size:.97rem;
-      color:#5f4a53;
+      color:var(--secondary);
     }
 
     .saree-photo-wrap{
@@ -488,14 +481,14 @@
       min-height:280px;
       border-radius:22px;
       overflow:hidden;
-      box-shadow:0 18px 34px rgba(202,38,98,.16);
+      box-shadow:none;
     }
 
     .saree-photo-wrap::before{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(180deg, rgba(113,25,55,.06), rgba(113,25,55,.5));
+      background:linear-gradient(180deg, rgba(84,69,65,.02), rgba(84,69,65,.42));
       pointer-events:none;
     }
 
@@ -519,7 +512,7 @@
       font-size:.9rem;
       font-weight:800;
       letter-spacing:.01em;
-      background:linear-gradient(180deg, rgba(113,25,55,.18), rgba(113,25,55,.72));
+      background:rgba(84,69,65,.68);
       backdrop-filter:blur(6px);
     }
 
@@ -546,7 +539,13 @@
       font-weight:900;
     }
 
-    .subhead{margin:16px 0 10px 0;font-size:1.05rem}
+    .subhead{
+      margin:16px 0 10px 0;
+      font-family:"DM Serif Display",Georgia,"Times New Roman",serif;
+      font-size:1.35rem;
+      font-weight:400;
+      letter-spacing:.01em;
+    }
 
     .services-list{
       display:grid;
@@ -557,11 +556,9 @@
     .service-item{
       padding:14px;
       border-radius:14px;
-      background:
-        radial-gradient(600px 140px at 10% 0%, rgba(202,38,98,.10), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
-      border:1px solid rgba(202,38,98,.14);
-      box-shadow:0 10px 20px rgba(0,0,0,.04);
+      background:#fcfbf8;
+      border:1px solid rgba(84,69,65,.10);
+      box-shadow:none;
     }
 
     .service-item strong{color:#222;font-weight:900}
@@ -577,9 +574,9 @@
     .fact{
       padding:14px;
       border-radius:14px;
-      border:1px solid rgba(202,38,98,.14);
-      background:rgba(255,255,255,.88);
-      box-shadow:0 10px 20px rgba(0,0,0,.04);
+      border:1px solid rgba(84,69,65,.10);
+      background:#fcfbf8;
+      box-shadow:none;
     }
 
     .fact strong{
@@ -734,21 +731,10 @@ input.invalid, textarea.invalid{
       header.site-header{padding:12px 14px}
       .brand-main{font-size:1.05rem;letter-spacing:0.12em}
       .brand-sub{font-size:0.60rem;letter-spacing:0.08em}
-      .brand::after{
-  display:inline-flex;
-  margin-left:0;
-  margin-top:8px;
-  transform:none;
-  height:20px;
-  padding:0 9px;
-  font-size:.68rem;
-  letter-spacing:.06em;
-  align-self:flex-start;
-}
 .brand{
   flex-wrap:wrap;        /* allows EST. 2004 to drop below neatly */
 }
-      nav.site-nav a{font-size:0.95rem;padding:8px 10px}
+      nav.site-nav a{font-size:0.95rem;padding:4px 0}
 
       .promo-img{height:260px}
       .promo-caption{flex-direction:column;align-items:flex-start}
@@ -766,7 +752,7 @@ nav.site-nav{
   width:100%;
   justify-content:flex-end;           /* move to right */
   margin-top:10px;                   /* space from logo */
-  gap:8px;
+  gap:16px;
 }
     }
 
@@ -775,8 +761,8 @@ nav.site-nav{
 .site-footer{
   margin-top:28px;
   border-top:1px solid #f0f0f0;
-  background:#ca2662;
-  color:#777;
+  background:var(--pink);
+  color:#f6f1eb;
   font-size:0.95rem;
 }
 
@@ -795,21 +781,22 @@ nav.site-nav{
 .footer-col{
   padding:14px;
   border-radius:14px;
-  border:1px solid rgba(0,0,0,.06);
-  background:rgba(246, 246, 244, 0.92);
-  box-shadow:0 10px 22px rgba(0,0,0,.04);
+  border:1px solid rgba(84,69,65,.08);
+  background:#f7f4ef;
+  box-shadow:none;
 }
 
 .site-footer h3{
   margin:0 0 10px 0;
-  color:#222;
-  font-size:1.02rem;
-  font-weight:900;
+  font-family:"DM Serif Display",Georgia,"Times New Roman",serif;
+  color:var(--secondary);
+  font-size:1.3rem;
+  font-weight:400;
 }
 
 .site-footer p{
   margin:0;
-  color:#666;
+  color:var(--secondary);
   line-height:1.6;
 }
 
@@ -836,7 +823,7 @@ nav.site-nav{
 }
 .footer-bottom{
   text-align:center;
-  color: #ffffff;
+  color:#f6f1eb;
 }
 .footer-links a{
   display:inline-flex;
@@ -851,16 +838,16 @@ nav.site-nav{
   justify-content:center;
   padding:10px 14px;
   border-radius:999px;
-  background:rgba(202,38,98,.10);
-  border:1px solid rgba(202,38,98,.22);
+  background:rgba(110,146,119,.10);
+  border:1px solid rgba(110,146,119,.24);
   font-weight:900;
   text-decoration:none;
 }
 
 .whatsapp-inline:hover,
 .whatsapp-inline:focus-visible{
-  background:rgba(202,38,98,.14);
-  border-color:rgba(202,38,98,.34);
+  background:rgba(110,146,119,.16);
+  border-color:rgba(110,146,119,.34);
   text-decoration:none;
 }
 
@@ -886,11 +873,9 @@ nav.site-nav{
 .map-caption{
   display:block;
   padding:10px 12px;
-  color:#222;
+  color:var(--secondary);
   font-weight:900;
-  background:
-    radial-gradient(600px 120px at 10% 0%, rgba(202,38,98,.10), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
+  background:#f7f4ef;
 }
 
 /* If you use embed */
@@ -921,9 +906,9 @@ nav.site-nav{
   align-items:flex-start;
   padding:16px;
   border-radius:16px;
-  border:1px solid rgba(202,38,98,.14);
-  background:rgba(255,255,255,.92);
-  box-shadow:0 10px 22px rgba(0,0,0,.04);
+  border:1px solid rgba(84,69,65,.10);
+  background:#fcfbf8;
+  box-shadow:none;
 }
 
 .owner-photo{
@@ -959,7 +944,7 @@ nav.site-nav{
 <header class="site-header">
   <div class="brand">
     <div class="brand-text">
-      <span class="brand-main">SRI VARSHA BEAUTY</span>
+      <span class="brand-main">SRI VARSHA BEAUTY <span class="brand-est">(est. 2004)</span></span>
       <span class="brand-sub">Salon • Professional Makeup • Saree Rolling</span>
     </div>
   </div>
